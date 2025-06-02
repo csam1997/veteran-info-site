@@ -1,0 +1,146 @@
+{
+  "title": "U.S. Veterans' Transition to Civilian Life",
+  "subtitle": "How it works, what resources exist, and common challenges (USA only)",
+  "sections": [
+    {
+      "id": "timeline",
+      "heading": "1. Transition Timeline (U.S. Context)",
+      "items": [
+        {
+          "subheading": "Pre-Separation Phase (6–12 months before discharge)",
+          "content": [
+            "Transition Assistance Program (TAP): Mandatory for most branches. Covers résumé writing, interviewing skills, financial planning, and an introduction to VA benefits (GI Bill, VA healthcare, etc.). Often includes a 'Benefits Briefing' where VA reps explain education, healthcare, and disability compensation.",
+            "Individualized Counseling: Many installations assign a Transition Specialist to create a personalized “Separation Roadmap” — target dates for applying to VA benefits or lining up job interviews."
+          ]
+        },
+        {
+          "subheading": "Separation / Early Post-Separation (0–3 months after discharge)",
+          "content": [
+            "DD-214 & VA Enrollment: Upon discharge, service members receive a DD-214. Submitting this to VA establishes eligibility for most benefits. Within 180 days post-discharge, veterans must enroll in VA healthcare to secure priority access and preserve any service-connected health needs.",
+            "Education and Training Kickoff: Many newly separated veterans submit Post-9/11 GI Bill (Chapter 33) applications or apply for Vocational Rehabilitation & Employment (Chapter 31) if they have a service-connected disability. Some enroll immediately in community college or technical schools using GI Bill funds."
+          ]
+        },
+        {
+          "subheading": "Medium-Term Adjustment (3–12 months after discharge)",
+          "content": [
+            "Job Search & Placement: Veterans engage with their local Department of Labor (DOL) One-Stop Career Center. A Veteran Employment Program Manager (VEPM) assists with résumé reviews, interview practice, and apprenticeship referrals. VA’s VR&E (Chapter 31) program (if qualified) helps find, train for, and place veterans into suitable civilian careers.",
+            "Benefits Navigation Continues: Filing or appealing disability compensation claims via VA’s eBenefits portal. Applying for VA home loan guarantees or VA-backed mortgages. Using VA’s 'Choice' or 'MISSION Act' to see community providers when VA facilities are far away."
+          ]
+        },
+        {
+          "subheading": "Long-Term Reintegration (1 year+ after discharge)",
+          "content": [
+            "Career & Education Progression: Many veterans either advance in their chosen civilian field or pursue advanced degrees (bachelor’s, master’s) funded by GI Bill or Yellow Ribbon support. Some use SBA resources to start veteran-owned businesses.",
+            "Ongoing Health & Wellness: Regular engagement with VA medical centers or community care for chronic, service-connected conditions. Vet Center check-ins for PTSD or military sexual trauma support.",
+            "Community & Family Stabilization: Joining local Veteran Service Organizations (VSOs) like VFW or American Legion for peer support, advocacy, and social events. Reestablishing family routines, with VA family counseling if needed."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "resources",
+      "heading": "2. Key U.S.-Only Resources & Benefits",
+      "items": [
+        {
+          "subheading": "A. Education & Training",
+          "content": [
+            "Post-9/11 GI Bill (Chapter 33): Covers full in-state tuition/fees (up to public university cap), a monthly housing allowance (based on DoD BAH rates), and an annual stipend for books/supplies. Eligible for 36 months of benefits; transferable to dependents under certain conditions.",
+            "Montgomery GI Bill (Chapter 30): Provides fixed monthly payments for degree or certificate programs. Generally less generous than Post-9/11 GI Bill; used by veterans who paid in but don’t qualify for the newer bill.",
+            "Vocational Rehabilitation & Employment (VR&E, Chapter 31): For veterans with a service-connected disability (usually ≥10%). Offers counseling, training, adaptive equipment, and on-the-job help to secure a suitable civilian occupation.",
+            "Yellow Ribbon Program: Supplements GI Bill when tuition exceeds the standard cap (private or out-of-state tuition). Approved schools and VA share the excess cost."
+          ]
+        },
+        {
+          "subheading": "B. Employment & Career Services",
+          "content": [
+            "TAP Employment Track: As part of TAP, the 'Employment Track' focuses on translating military skills into civilian résumés, networking strategies, and interviewing techniques—often with civilian HR reps present.",
+            "DOL One-Stop Career Centers: Every state has at least one. A Veteran Employment Program Manager (VEPM) helps with job matching, apprenticeship referrals, and free résumé/interview workshops.",
+            "VA Vocational Rehabilitation & Employment (VR&E): Beyond education, VR&E provides employment counseling, résumé development, and can subsidize wages while training on the job.",
+            "State LVERs (Local Veterans’ Employment Representatives): Many states fund LVERs who connect vets to state-contracted businesses, organize veteran-focused job fairs, and coordinate state hiring incentives for employers."
+          ]
+        },
+        {
+          "subheading": "C. Healthcare & Mental Health Services",
+          "content": [
+            "VA Healthcare System: Eligibility depends on service-connected disability rating, income, combat service, etc. Offers primary, specialty, women’s health, and mental health services at VA medical centers and community clinics.",
+            "Vet Centers (Readjustment Counseling): Community-based centers that offer free individual/group counseling for combat trauma, bereavement, MST, family counseling, and referrals to VA programs. No VA healthcare enrollment required to use Vet Center services.",
+            "Veterans Crisis Line: Dial 988 then press 1; text 838255; or chat online at VeteransCrisisLine.net. Connects vets to trained responders 24/7.",
+            "Community Care under the MISSION Act: If a veteran’s nearest VA facility is >30 minutes away (or wait times exceed VA thresholds), they can see approved community providers, billed to VA."
+          ]
+        },
+        {
+          "subheading": "D. Housing & Financial Assistance",
+          "content": [
+            "VA Home Loan Guarantee: Veterans (with an honorable discharge and meeting service-length requirements) can secure mortgages with no down payment and no PMI. VA guarantees a portion of the loan, so lenders offer better terms.",
+            "HUD-VASH (HUD-Veterans Affairs Supportive Housing): A HUD/VA partnership offering Section 8 vouchers + case management/clinical services to homeless or at-risk veterans.",
+            "Grant and Per Diem (GPD) Transitional Housing: Short-term residential accommodations plus supportive services, ideal for vets who need a safe place while they get back on their feet.",
+            "Emergency Financial Assistance (VSOs & VA): VSOs like American Legion and VFW administer small grants for rent, utilities, or car repairs. VA’s Financial Readiness program offers budgeting, credit repair, and foreclosure prevention counseling."
+          ]
+        },
+        {
+          "subheading": "E. Peer & Community Support",
+          "content": [
+            "Veteran Service Organizations (VSOs): National groups like Disabled American Veterans (DAV), Vietnam Veterans of America (VVA), American Legion, and VFW. VSOs provide free claims assistance, legal clinics, scholarships, and host local events.",
+            "Stand Downs & State/City Veteran Fairs: 'Stand Downs' (hosted by VSOs or nonprofits) offer medical screenings, haircuts, meals, clothing, and housing referrals for homeless or at-risk vets. State/city veteran offices run outreach events, job/resource fairs, and networking mixers.",
+            "Online Networking & Mentorship: Platforms like American Corporate Partners (ACP) match vets with corporate mentors for career coaching. Sites such as RallyPoint or LinkedIn Veteran Mentor groups connect vets with industry professionals across the U.S."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "challenges",
+      "heading": "3. Common Challenges Faced by U.S. Veterans",
+      "items": [
+        {
+          "subheading": "Translating Military Skills",
+          "content": [
+            "Military job titles (e.g., “MOS 11B – Infantryman”) often don’t clearly map to civilian roles. A veteran might not know that 'Infantry Fire Team Leader' implies leadership, risk management, and logistics skills.",
+            "Résumés full of acronyms (e.g., “HMMWV,” “IED avoidance convoy”) can confuse civilian HR. Veterans must learn to highlight transferable soft skills (leadership, teamwork, problem solving) alongside technical tasks."
+          ]
+        },
+        {
+          "subheading": "Bureaucracy & Paperwork Delays",
+          "content": [
+            "VA systems—eBenefits, VA.gov, VA’s Disability Claim Portal—can be daunting. Compensation or pension claims frequently require additional medical evidence, lengthening approval times.",
+            "Missing or incorrect information on the DD-214 (discharge date, service-connected conditions) can stall benefit access. Resolving discrepancies often involves more paperwork and waiting."
+          ]
+        },
+        {
+          "subheading": "Mental Health & Stigma",
+          "content": [
+            "Rates of PTSD, depression, and anxiety are higher among combat veterans. While VA mental health services exist, some hesitate to seek help for fear of being labeled or worried it might affect security clearances or employment.",
+            "Long wait times for initial mental health appointments at VA facilities—transitioning to community care can help but adds complexity."
+          ]
+        },
+        {
+          "subheading": "Unemployment & Underemployment",
+          "content": [
+            "Veteran unemployment rates often spike in the first 3–6 months post-separation. Even experienced service members may find themselves underqualified for civilian jobs without retraining—or without knowing how to repackage their experience.",
+            "Some veterans accept jobs below their skill set simply because they aren’t familiar with the civilian job market or need immediate income."
+          ]
+        },
+        {
+          "subheading": "Homelessness & Housing Insecurity",
+          "content": [
+            "Veterans are disproportionately represented among the homeless, due to mental health challenges, lack of family support, or financial strain.",
+            "HUD-VASH is effective, but waiting lists and landlords who won’t accept vouchers can delay stable housing."
+          ]
+        },
+        {
+          "subheading": "Family & Social Reintegration",
+          "content": [
+            "Adjusting to civilian family dynamics can be tricky after years in a hierarchical, mission-driven culture. Roles at home—spouse, parent, child—must be renegotiated.",
+            "Civilian friends or coworkers may not understand military experiences, leading to feelings of isolation or 'not belonging.'"
+          ]
+        },
+        {
+          "subheading": "Financial Strain",
+          "content": [
+            "Junior enlisted pay (E-1 to E-4) is relatively low; many service members separate with minimal savings. The first civilian paycheck may be lower than expected, especially if the veteran is in training or an entry-level job.",
+            "Up-front costs—security deposit for rent, car insurance, moving expenses—can quickly deplete any remaining savings."
+          ]
+        }
+      ]
+    }
+  ]
+}
