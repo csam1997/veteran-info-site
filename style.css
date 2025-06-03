@@ -77,7 +77,7 @@ body {
   margin-bottom: 1.5rem;
 
   /* Keep the soft glow so it stands out on black */
-  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.7));
+  filter: 
 }
 
 /* ===================== */
