@@ -61,7 +61,7 @@ body {
 
 /* LOGO: 240px wide, centered */
 .hero-content .logo {
-  width: 240px;
+  width: 480px;
   height: auto;
   margin-bottom: 0.5rem;
   filter: drop-shadow(0 0 6px rgba(0, 0, 0, 0.1));
