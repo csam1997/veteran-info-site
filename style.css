@@ -9,22 +9,27 @@ body {
   background-color: #f9f9f9;
 }
 
-/* Header */
+/* Header/navigation bar */
 header {
   background-color: #004080;
   color: white;
-  text-align: center;
-  padding: 20px 10px;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
-
 header h1 {
   margin: 0;
-  font-size: 2em;
+  font-size: 1.5em;
 }
-
-header p {
-  margin-top: 8px;
-  font-size: 1.1em;
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 15px;
+  font-size: 1em;
+}
+nav a:hover {
+  text-decoration: underline;
 }
 
 /* Main content container */
@@ -77,7 +82,11 @@ footer {
     padding: 10px;
   }
   header h1 {
-    font-size: 1.5em;
+    font-size: 1.2em;
+  }
+  nav a {
+    font-size: 0.9em;
+    margin-left: 10px;
   }
   h2 {
     font-size: 1.3em;
