@@ -1,0 +1,122 @@
+/* style.css */
+
+/* Import a subtle ‘noise’ texture purely with CSS */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* HERO CONTAINER: full‐viewport, subtle texture */
+.hero-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+
+  /* Light grey base color */
+  background-color: #f2f2f2;
+
+  /* Overlay a very subtle “noise” pattern using CSS gradients */
+  background-image:
+    linear-gradient(0deg, rgba(255,255,255,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+  background-size: 2px 2px;
+}
+
+/* DARK OVERLAY: to ensure white text/logo stands out */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* CENTERED CONTENT */
+.hero-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -60%);
+  text-align: center;
+  color: #fff;
+  z-index: 2; /* Above overlay */
+}
+
+/* Logo styling */
+.logo {
+  max-width: 200px;
+  width: 30%;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+/* Main title */
+.site-title {
+  font-size: 2.5rem;
+  margin: 0.5rem 0;
+  letter-spacing: 1px;
+}
+
+/* Tagline text */
+.tagline {
+  font-size: 1.1rem;
+  margin-top: 0.25rem;
+  opacity: 0.9;
+}
+
+/* NAVIGATION / BUTTONS */
+.hero-nav {
+  position: absolute;
+  bottom: 7%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 1rem;
+  z-index: 2; /* Above overlay */
+}
+
+/* Button styles */
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: rgba(255, 255, 255, 0.85);
+  color: #004080;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hover/focus effect */
+.btn:hover,
+.btn:focus {
+  background-color: #004080;
+  color: white;
+  outline: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .logo {
+    width: 50%;
+  }
+  .site-title {
+    font-size: 2rem;
+  }
+  .tagline {
+    font-size: 1rem;
+  }
+  .btn {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
+  .hero-nav {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    bottom: 5%;
+  }
+}
