@@ -10,47 +10,79 @@
     href="https://fonts.googleapis.com/css2?family=Basic&family=Kaushan+Script&display=swap"
     rel="stylesheet"
   />
+
+  <!-- Your existing style.css -->
   <link rel="stylesheet" href="style.css" />
-  
+
+  <!-- Chat‐specific tweaks -->
   <style>
-    /* Additional styles for the chat window */
-    .chat-window {
+    /* Ensure the hero content is a column so header + chat stack vertically */
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start; /* Let header sit at top, chat follows */
+      z-index: 3; /* Above any overlay */
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto;
+      padding-top: 2rem; /* Give space beneath the logo/title */
+    }
+
+    /* Shrink the header area so chat doesn’t overlap */
+    .hero-content > img.logo {
+      margin-bottom: 1rem;
+    }
+    .site-title {
+      margin-bottom: 0.25rem;
+    }
+    .tagline {
+      margin-bottom: 2rem;
+    }
+
+    /* Chat window container */
+    #chatWindow {
       width: 100%;
       max-width: 600px;
-      height: 60vh;
-      margin: 2rem auto 1rem auto;
+      height: 50vh; /* adjust as needed */
       background-color: rgba(255, 255, 255, 0.05);
       border-radius: 8px;
       overflow-y: auto;
       padding: 1rem;
       font-family: 'Basic', sans-serif;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
     }
+
+    /* Individual message bubbles */
     .message {
-      display: block;
-      margin: 0.5rem 0;
+      display: inline-block;
+      max-width: 80%;
       padding: 0.5rem 0.75rem;
       border-radius: 20px;
-      max-width: 85%;
       line-height: 1.4;
+      word-wrap: break-word;
     }
     .message.user {
       background-color: rgba(0, 123, 255, 0.8);
       color: #fff;
       align-self: flex-end;
-      margin-left: auto;
     }
     .message.shirley {
       background-color: rgba(255, 255, 255, 0.15);
       color: #fdfdfd;
       align-self: flex-start;
-      margin-right: auto;
     }
+
+    /* Input area below chat window */
     .chat-input-container {
       width: 100%;
       max-width: 600px;
-      margin: 0 auto 2rem auto;
       display: flex;
       gap: 0.5rem;
+      margin-bottom: 2rem;
     }
     .chat-input {
       flex: 1;
@@ -66,7 +98,7 @@
       color: #ccc;
     }
     .send-btn {
-      padding: 0 1.5rem;
+      padding: 0 1.25rem;
       border: none;
       border-radius: 20px;
       background-color: #007bff;
@@ -74,14 +106,32 @@
       font-family: 'Basic', sans-serif;
       font-size: 1rem;
       cursor: pointer;
+      flex-shrink: 0;
     }
     .send-btn:disabled {
       background-color: #555;
       cursor: not-allowed;
     }
-    .chat-window-container {
+
+    /* “Back to Resources” at bottom */
+    .back-btn-container {
+      width: 100%;
+      max-width: 600px;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .back-btn-container .btn {
+      margin: 0;
+    }
+
+    /* Make sure the body & containers fill screen properly */
+    body, html {
+      height: 100%;
+    }
+    .hero-container {
       display: flex;
       flex-direction: column;
+      height: 100%;
     }
   </style>
 </head>
@@ -89,17 +139,19 @@
   <div class="hero-container">
     <div class="overlay"></div>
 
+    <!-- Moved chat content entirely into hero-content -->
     <header class="hero-content" role="banner">
       <img src="logo123.png" alt="Veteran Support Network Logo" class="logo" />
 
       <h1 class="site-title">Shirley: Career Chat</h1>
       <p class="tagline">Ask Shirley any career‐related question</p>
-    </header>
 
-    <div class="hero-nav">
       <!-- Chat window -->
-      <div id="chatWindow" class="chat-window chat-window-container">
-        <!-- Messages go here -->
+      <div id="chatWindow">
+        <!-- Welcome message from Shirley -->
+        <div class="message shirley">
+          Hello! I’m Shirley, your career support assistant. How can I help you today?
+        </div>
       </div>
 
       <!-- Input area -->
@@ -114,8 +166,10 @@
       </div>
 
       <!-- Back to Resources button -->
-      <a href="resources.html" class="btn" style="display:block; margin:0 auto;">Back to Resources</a>
-    </div>
+      <div class="back-btn-container">
+        <a href="resources.html" class="btn">Back to Resources</a>
+      </div>
+    </header>
   </div>
 
   <script src="chat.js"></script>
