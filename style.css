@@ -1,14 +1,3 @@
-/* =========================== */
-/* 0. IMPORT GOOGLE FONTS      */
-/* =========================== */
-
-/*  
-   - Playfair Display: for .site-title and .tagline
-   - Dancing Script: for .quote-text paragraph
-*/
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500&family=Playfair+Display:wght@400;600&display=swap');
-
-
 /* ============================ */
 /* 1. GLOBAL RESET & BACKGROUND */
 /* ============================ */
@@ -21,23 +10,24 @@
 html, body {
   width: 100%;
   height: 100%;
-  background-color: #f2f2f2; /* Very light gray background */
+  background-color: #f2f2f2; /* Light gray site‐wide background */
   overflow-x: hidden;
 }
 
 body {
   overflow-y: auto;
-  color: #111111; /* Dark text for contrast */
-  font-family: 'Playfair Display', serif; /* Fallback default */
+  color: #111111; /* Default dark text on light gray */
+  font-family: 'Arial', sans-serif;
 }
 
 /* =========================== */
 /* 2. HERO CONTAINER (ALL PAGES) */
 /* =========================== */
+/* For chat.html, we’ll override the background in the .hero‐container later */
 .hero-container {
   position: relative;
   width: 100%;
-  min-height: 100vh; /* Fill viewport */
+  min-height: 100vh; /* Fill entire viewport */
   background-color: #f2f2f2; /* Light gray */
   display: flex;
   flex-direction: column;
@@ -45,13 +35,12 @@ body {
 }
 
 .overlay {
-  /* Optional: a very subtle dark overlay */
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0,0,0,0.05);
+  background-color: rgba(0,0,0,0.05); /* Very subtle dark overlay on light gray */
   z-index: 1;
 }
 
@@ -77,7 +66,7 @@ body {
   filter: drop-shadow(0 0 6px rgba(0, 0, 0, 0.1));
 }
 
-/* Main Title: “Veteran Support Network” */
+/* Main Title (Playfair Display already imported above) */
 .site-title {
   font-family: 'Playfair Display', serif;
   font-size: 2.5rem;
@@ -86,42 +75,19 @@ body {
   text-shadow: 0 1px 2px rgba(255, 255, 255, 0.6);
 }
 
-/* Tagline: “Supporting Veterans’ Journey Back to Civilian Life” */
+/* Tagline: visible on light or dark background */
 .tagline {
   font-family: 'Playfair Display', serif;
-  font-size: 1.5 rem;
-  color: #333333; /* Slightly lighter dark */
+  font-size: 1rem;
+  color: #ffffff; /* White text on chat page’s dark background */
   margin: 0.25rem 0 1.5rem 0;
-  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.7);
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
 }
 
 /* =========================== */
-/* 4. QUOTE PARAGRAPH (COLUMNS) */
+/* 4. HOME & RESOURCES NAV BAR */
+/* (Leave this unchanged for other pages) */
 /* =========================== */
-/* The paragraph in Dancing Script */
-/* =========================== */
-/* 4. QUOTE PARAGRAPH (COLUMNS) */
-/* =========================== */
-.quote-text {
-  font-family: 'Dancing Script', cursive;
-  font-size: 1.4 rem;      /* Increased from 1.5rem to 2rem */
-  color: #111111;       /* Dark for readability */
-  margin: 0 0 1.5rem 0;
-  line-height: 2.2;     /* More spacious line‐height for large text */
-}
-
-.quote-container {
-  max-width: 700px;
-  margin: 0 auto 1.5rem auto;
-  padding: 0 1rem;
-  text-align: center;
-}
-
-
-/* =========================== */
-/* 5. HOME & RESOURCES NAV BAR */
-/* =========================== */
-/* Matches exactly <nav class="hero-nav"> … <a class="btn">… */
 .hero-nav {
   display: flex;
   gap: 1rem;
@@ -154,18 +120,19 @@ body {
 }
 
 /* =========================== */
-/* 6. CHAT-PAGE STYLES         */
+/* 5. CHAT-PAGE SPECIFIC STYLES */
 /* =========================== */
-/* In chat.html:
-   <div id="chatWindow"></div>
-   <div class="chat-input-container">…</div>
-   <div class="back-btn-container"><a class="btn">Back to Resources</a></div>
-*/
+/* Override hero‐container background for chat.html to be a darker gray—lighter than pure black */
+.chat-hero {
+  background-color: #222222; /* Dark gray, but not pure black */
+}
+
+/* We’ll apply .chat-hero to the top .hero-container in chat.html */
 #chatWindow {
   width: 100%;
   max-width: 700px;
   height: 45vh; /* Leaves room for input + back button */
-  background-color: #ffffff;  /* White container */
+  background-color: #ffffff;  /* White container for chat bubbles */
   border-radius: 8px;
   overflow-y: auto;
   padding: 1rem;
@@ -275,13 +242,7 @@ body {
 }
 
 /* =========================== */
-/* 7. ADDITIONAL PAGES (OPTIONAL) */
-/* =========================== */
-/* resume-builder.html and book.html both use .hero-content and .btn */
-/* Add further form styles below if needed. */
-
-/* =========================== */
-/* 8. RESPONSIVE ADJUSTMENTS   */
+/* 6. RESPONSIVE ADJUSTMENTS   */
 /* =========================== */
 @media (max-width: 800px) {
   .site-title {
@@ -303,10 +264,6 @@ body {
     max-width: 90%;
     gap: 0.75rem;
   }
-  .quote-container {
-    max-width: 90%;
-    padding: 0 1rem;
-  }
 }
 
 @media (max-width: 500px) {
@@ -326,8 +283,5 @@ body {
   }
   .send-btn {
     width: 100%;
-  }
-  .quote-text {
-    font-size: 1rem;
   }
 }
