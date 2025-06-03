@@ -46,10 +46,10 @@ body {
   z-index: 2; /* Above overlay */
 }
 
-/* Logo styling */
+/* Logo styling — doubled in size */
 .logo {
-  max-width: 200px;
-  width: 30%;
+  max-width: 600px; /* Twice the previous 300px */
+  width: 80%;       /* Twice the previous 40% */
   height: auto;
   margin-bottom: 1rem;
 }
@@ -102,7 +102,7 @@ body {
 /* Responsive adjustments */
 @media (max-width: 600px) {
   .logo {
-    width: 50%;
+    width: 90%;   /* Increased from 60% to 90% on small screens */
   }
   .site-title {
     font-size: 2rem;
