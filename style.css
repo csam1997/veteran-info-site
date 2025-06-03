@@ -1,268 +1,190 @@
-/* style.css */
-
-/* ===================== */
-/* 1. Global Reset + Setup */
-* {
-  box-sizing: border-box;
+/* =================================== */
+/* 1. Ensure full‐height container */
+html, body {
   margin: 0;
   padding: 0;
+  height: 100%;
 }
 
-body {
-  font-family: 'Arial', sans-serif;
-  height: 100vh;
-  overflow: hidden;
-}
-
-/* ===================== */
-/* 2. HERO CONTAINER (Pure Black) */
+/* 2. Hero container spans entire viewport */
 .hero-container {
   position: relative;
   width: 100%;
-  height: 100vh;
-  background-color: #bcbcbc; /* Solid black */
-}
-
-/* Optional: faint geometric lines via pseudo‐element */
-/*
-.hero-container::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
   height: 100%;
-  background-image: 
-    linear-gradient(45deg, rgba(255, 255, 255, 0.01) 1px, transparent 1px),
-    linear-gradient(-45deg, rgba(255, 255, 255, 0.01) 1px, transparent 1px);
-  background-size: 20px 20px;
-  pointer-events: none;
-  z-index: 1;
-}
-*/
-
-/* ===================== */
-/* 3. OVERLAY */
-.overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  /* You can set to 0 (invisible) if you want pure black behind everything */
-  background-color: rgba(0, 0, 0, 0.2); /* 20% black overlay (optional) */
-  z-index: 2;
 }
 
-/* ===================== */
-/* 4. CENTERED HERO CONTENT */
+/* 3. Preserve your existing black background + overlay here... */
+
+/* 4. Header area (logo + title + tagline) */
 .hero-content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -60%);
-  text-align: center;
-  z-index: 3; /* Above overlay */
-  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  z-index: 3;
+  width: 100%;
   max-width: 800px;
-  color: #f2f2f2;
+  margin: 0 auto;
+  padding-top: 2rem;
+  box-sizing: border-box;
 }
 
-/* ===================== */
-/* 5. LOGO (Large + Glow, no fade) */
-.logo {
-  max-width: 600px;
-  width: 80%;
+.hero-content .logo {
+  width: 120px;
   height: auto;
-  margin-bottom: 1.5rem;
-
-  /* Keep the soft glow so it stands out on black */
-  filter: 
+  margin-bottom: 0.5rem;
+  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.6));
 }
 
-/* ===================== */
-/* 6. SITE TITLE (Basic font + Text‐Shadow, no fade) */
 .site-title {
   font-family: 'Basic', sans-serif;
-  font-size: 3.2rem;
-  letter-spacing: 2px;
-  color: #f2f2f2;
-  margin-bottom: 0.5rem;
-  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  font-size: 2.5rem;
+  color: #fdfdfd;
+  margin: 0;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
 }
 
-/* ===================== */
-/* 7. TAGLINE (Basic font, no fade) */
 .tagline {
   font-family: 'Basic', sans-serif;
-  font-size: 1.2rem;
-  color: #eaeaea;
-  margin-bottom: 1rem;
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
-}
-
-/* ===================== */
-/* 8. INTRO PARAGRAPH (Kaushan Script, no fade) */
-.intro {
-  font-family: 'Kaushan Script', cursive;
-  font-size: 1.35rem;
-  color: #fdfdfd;
-  margin: 1rem auto;
-  max-width: 600px;
-  line-height: 1.5;
-}
-
-/* ===================== */
-/* 9. BUTTONS (Basic font + Hover Effects, no fade) */
-.hero-nav {
-  position: absolute;
-  bottom: 6%;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 1rem;
-  z-index: 3;
-}
-
-.btn {
-  display: inline-block;
-  padding: 1rem 2rem;
-  background-color: rgba(255, 255, 255, 0.95);
-  color: #1f2a44;
-  font-family: 'Basic', sans-serif;
-  font-weight: 600;
   font-size: 1rem;
-  text-decoration: none;
-  border-radius: 6px;
-  transition: transform 0.3s ease, background-color 0.3s ease;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  color: #eaeaea;
+  margin: 0.25rem 0 1.5rem 0;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
-.btn:hover,
-.btn:focus {
-  background-color: #1f2a44;
-  color: #f2f2f2;
-  transform: translateY(-3px);
+/* 5. Chat window */
+#chatWindow {
+  width: 100%;
+  max-width: 700px;
+  height: 45vh; /* slightly shorter so input + back button remain visible */
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  overflow-y: auto;
+  padding: 1rem;
+  font-family: 'Basic', sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  box-sizing: border-box;
 }
 
-/* ===================== */
-/* 10. RESPONSIVE ADJUSTMENTS */
+/* 6. Message bubbles */
+.message {
+  display: inline-block;
+  max-width: 80%;
+  padding: 0.6rem 0.9rem;
+  border-radius: 20px;
+  line-height: 1.4;
+  word-wrap: break-word;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.message.user {
+  background-color: rgba(0, 123, 255, 0.9);
+  color: #fff;
+  align-self: flex-end;
+}
+
+.message.shirley {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #fdfdfd;
+  align-self: flex-start;
+}
+
+/* 7. Input row */
+.chat-input-container {
+  width: 100%;
+  max-width: 700px;
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  box-sizing: border-box;
+}
+
+.chat-input {
+  flex: 1;
+  height: 48px;
+  padding: 0 1rem;
+  border-radius: 24px;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fdfdfd;
+  font-family: 'Basic', sans-serif;
+  font-size: 1rem;
+}
+
+.chat-input::placeholder {
+  color: #ccc;
+}
+
+.send-btn {
+  width: 100px;
+  height: 48px;
+  border: none;
+  border-radius: 24px;
+  background-color: #007bff;
+  color: #fff;
+  font-family: 'Basic', sans-serif;
+  font-size: 1rem;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.send-btn:disabled {
+  background-color: #555;
+  cursor: not-allowed;
+}
+
+/* 8. “Back to Resources” */
+.back-btn-container {
+  width: 100%;
+  max-width: 700px;
+  text-align: center;
+  margin-bottom: 2rem;
+  box-sizing: border-box;
+}
+
+.back-btn-container .btn {
+  margin: 0;
+}
+
+/* 9. Responsive Tweaks */
 @media (max-width: 800px) {
-  .logo {
-    width: 90%;
-  }
   .site-title {
-    font-size: 2.6rem;
+    font-size: 2rem;
   }
   .tagline {
-    font-size: 1.1rem;
-  }
-  .intro {
-    font-size: 1.15rem;
-    max-width: 85%;
-  }
-  .btn {
-    padding: 0.8rem 1.5rem;
     font-size: 0.9rem;
   }
-  .hero-nav {
-    gap: 0.75rem;
-    bottom: 4%;
+  #chatWindow {
+    height: 50vh;
+    max-width: 90%;
+  }
+  .chat-input-container {
+    max-width: 90%;
+  }
+  .back-btn-container {
+    max-width: 90%;
   }
 }
 
 @media (max-width: 500px) {
   .site-title {
-    font-size: 2rem;
+    font-size: 1.6rem;
   }
   .tagline {
-    font-size: 0.95rem;
+    font-size: 0.8rem;
+    margin-bottom: 1rem;
   }
-  .intro {
-    font-size: 1rem;
-    max-width: 90%;
+  #chatWindow {
+    height: 40vh;
   }
-  .btn {
-    padding: 0.6rem 1.2rem;
-    font-size: 0.85rem;
-  }/* Multi‐step form: hide steps by default */
-.form-step {
-  display: none;
-  width: 100%;
-  max-width: 600px;
-  margin: 0 auto;
-  color: #fdfdfd;
-  font-family: 'Basic', sans-serif;
-}
-
-/* Show the active step */
-.form-step[data-step].active {
-  display: block;
-}
-
-/* “Hidden” helper class */
-.hidden {
-  display: none !important;
-}
-
-/* Step indicator (the circles at top) */
-.step-indicator {
-  text-align: center;
-  margin-bottom: 1.5rem;
-}
-
-.step-indicator .step {
-  display: inline-block;
-  width: 30px;
-  height: 30px;
-  line-height: 30px;
-  border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.2);
-  color: #f2f2f2;
-  margin: 0 4px;
-  font-weight: bold;
-  font-family: 'Basic', sans-serif;
-}
-
-.step-indicator .step.active {
-  background-color: #f2f2f2;
-  color: #1f2a44;
-}
-
-/* Smaller “secondary” button style for “Add Another” */
-.btn.secondary {
-  background-color: rgba(255, 255, 255, 0.8);
-  color: #1f2a44;
-  font-size: 0.9rem;
-  margin-top: 0.5rem;
-}
-
-.btn.secondary:hover {
-  background-color: #1f2a44;
-  color: #f2f2f2;
-}
-
-/* Simple form styling */
-label {
-  display: block;
-  margin-bottom: 12px;
-  font-size: 1rem;
-}
-
-label input,
-label select,
-label textarea {
-  display: block;
-  width: 100%;
-  padding: 8px;
-  margin-top: 4px;
-  border: none;
-  border-radius: 4px;
-  font-size: 1rem;
-}
-
-label textarea {
-  resize: vertical;
-}
-
+  .chat-input-container {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+  .send-btn {
+    width: 100%;
+  }
 }
