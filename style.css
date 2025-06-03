@@ -28,7 +28,7 @@ html, body {
 body {
   overflow-y: auto;
   color: #111111; /* Dark text for contrast */
-  font-family: 'Arial', sans-serif; /* Fallback default */
+  font-family: 'Playfair Display', serif; /* Fallback default */
 }
 
 /* =========================== */
@@ -104,7 +104,7 @@ body {
 /* =========================== */
 .quote-text {
   font-family: 'Dancing Script', cursive;
-  font-size: 2rem;      /* Increased from 1.5rem to 2rem */
+  font-size: 1.4 rem;      /* Increased from 1.5rem to 2rem */
   color: #111111;       /* Dark for readability */
   margin: 0 0 1.5rem 0;
   line-height: 2.2;     /* More spacious line‐height for large text */
