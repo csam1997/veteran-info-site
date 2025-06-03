@@ -1,6 +1,6 @@
-/* =========================== */
+/* ============================ */
 /* 1. GLOBAL RESET & BACKGROUND */
-/* =========================== */
+/* ============================ */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -10,7 +10,7 @@
 html, body {
   width: 100%;
   height: 100%;
-  background-color: #000; /* Pure black background for all pages */
+  background-color: #000; /* Pure black background */
   font-family: 'Arial', sans-serif;
   overflow-x: hidden;
 }
@@ -20,20 +20,37 @@ body {
   color: #f2f2f2;
 }
 
+/* Uncomment the block below if you want a very subtle noise overlay:
+/*
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image:
+    linear-gradient(0deg, rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 2px 2px;
+  pointer-events: none;
+  z-index: 0;
+}
+*/
+
 /* =========================== */
 /* 2. HERO CONTAINER (ALL PAGES) */
 /* =========================== */
 .hero-container {
   position: relative;
   width: 100%;
-  min-height: 100vh; /* Fill viewport */
+  min-height: 100vh; /* Fill entire viewport */
   background-color: #000; /* Pure black */
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-/* Semi‐transparent overlay if needed */
 .overlay {
   position: absolute;
   top: 0;
@@ -83,9 +100,9 @@ body {
 }
 
 /* =========================== */
-/* 4. HOME-PAGE NAVIGATION BAR */
+/* 4. HOME & RESOURCES NAV BAR */
 /* =========================== */
-/* Match index.html’s <nav class="hero-nav"> exactly */
+/* Matches exactly <nav class="hero-nav"> … <a class="btn">… */
 .hero-nav {
   display: flex;
   gap: 1rem;
@@ -116,32 +133,17 @@ body {
 }
 
 /* =========================== */
-/* 5. RESOURCES PAGE BUTTONS */
+/* 5. CHAT-PAGE STYLES         */
 /* =========================== */
-/* resources.html also uses <nav class="hero-nav"> with the same .btn links */
-.resources-nav {
-  display: flex;
-  gap: 1rem;
-  margin-bottom: 2rem;
-  flex-wrap: wrap;
-  justify-content: center;
-  z-index: 2;
-}
-
-/* If you use .resources-nav .btn, it will catch those same styling rules */
-
-/* =========================== */
-/* 6. CHAT-PAGE LAYOUT & STYLES */
-/* =========================== */
-/* In chat.html, we have: 
-     <div id="chatWindow"></div>
-     <div class="chat-input-container">…</div>
-     <div class="back-btn-container"><a class="btn">Back to Resources</a></div>
+/* In chat.html: 
+   <div id="chatWindow"></div>
+   <div class="chat-input-container">…</div>
+   <div class="back-btn-container"><a class="btn">Back to Resources</a></div>
 */
 #chatWindow {
   width: 100%;
   max-width: 700px;
-  height: 45vh; /* Keeps room for input + back button */
+  height: 45vh; /* Leaves room for input + back button */
   background-color: rgba(255,255,255,0.05);
   border-radius: 8px;
   overflow-y: auto;
@@ -248,20 +250,26 @@ body {
 }
 
 /* =========================== */
-/* 7. RESUME BUILDER & BOOK PAGE (Placeholder Styling) */
+/* 6. ADDITIONAL PAGES (e.g., Resume, Book) */
 /* =========================== */
-/*
-   resume-builder.html and book.html each also use .hero-content,
-   plus placeholders for forms. If you need additional styling for
-   those forms, add them here. For now, they inherit the same structure:
+/* resume-builder.html and book.html both use .hero-content and .btn */
+/* If you need additional styling for those forms, add it here, e.g.:
 
-   - .hero-content
-   - .btn
-   - #chatWindow, .chat-input-container, etc., won’t apply.
+.res-builder-form {
+  background-color: rgba(255,255,255,0.05);
+  border-radius: 8px;
+  padding: 1rem;
+  max-width: 700px;
+  margin-bottom: 1rem;
+}
+
+.book-form {
+  /* … */
+}
 */
 
 /* =========================== */
-/* 8. RESPONSIVE ADJUSTMENTS   */
+/* 7. RESPONSIVE ADJUSTMENTS   */
 /* =========================== */
 @media (max-width: 800px) {
   .site-title {
@@ -279,7 +287,7 @@ body {
   .back-btn-container {
     max-width: 90%;
   }
-  .hero-nav, .resources-nav {
+  .hero-nav {
     max-width: 90%;
     gap: 0.75rem;
   }
