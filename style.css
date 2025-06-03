@@ -15,13 +15,13 @@ body {
   position: relative;
   width: 100%;
   height: 100vh;
-   background: linear-gradient(135deg, #777777 0%, #666666 100%);
+ background: linear-gradient(135deg, #444444 0%, #777777 100%);
 
   /* Overlay a very subtle noise texture */
   background-image:
-    linear-gradient(135deg, #777777 0%, #666666 100%),
-    linear-gradient(0deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    linear-gradient(135deg, #444444 0%, #777777 100%),
+    linear-gradient(0deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
   background-size:
     auto,
     2px 2px,
