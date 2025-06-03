@@ -89,7 +89,7 @@ body {
 /* Tagline: “Supporting Veterans’ Journey Back to Civilian Life” */
 .tagline {
   font-family: 'Playfair Display', serif;
-  font-size: 1rem;
+  font-size: 1.5 rem;
   color: #333333; /* Slightly lighter dark */
   margin: 0.25rem 0 1.5rem 0;
   text-shadow: 0 1px 1px rgba(255, 255, 255, 0.7);
@@ -101,10 +101,11 @@ body {
 /* The paragraph in Dancing Script */
 .quote-text {
   font-family: 'Dancing Script', cursive;
-  font-size: 1.1rem;
+  font-size: 1.3 rem;
   color: #111111; /* Dark for readability */
   margin: 0 0 1.5rem 0;
-  line-height: 1.6;
+  line-height: 1.8;
+   text-shadow: 0 1px 1px rgba(255, 255, 255, 0.7);
 }
 
 /* Center‐align on wide screens, collapse on narrow */
