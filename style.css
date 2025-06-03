@@ -21,14 +21,7 @@ body {
   width: 100%;
   height: 100vh;
 
-  /* Gradient: navy → charcoal */
-  background: linear-gradient(135deg, #1f2a44 0%, #333030 100%);
-
-  /* Layer a very subtle noise texture */
-  background-image:
-    linear-gradient(135deg, #1f2a44 0%, #333030 100%),
-    linear-gradient(0deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-color: #000000;
   background-size:
     auto,
     2px 2px,
