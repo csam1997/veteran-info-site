@@ -20,24 +20,6 @@ body {
   color: #f2f2f2;
 }
 
-/* Uncomment the block below if you want a very subtle noise overlay:
-/*
-body::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image:
-    linear-gradient(0deg, rgba(255,255,255,0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
-  background-size: 2px 2px;
-  pointer-events: none;
-  z-index: 0;
-}
-*/
-
 /* =========================== */
 /* 2. HERO CONTAINER (ALL PAGES) */
 /* =========================== */
@@ -76,12 +58,14 @@ body::before {
   text-align: center;
 }
 
+/* ↑—— LOGO: doubled from 120px to 240px ——↑ */
 .hero-content .logo {
-  width: 120px;
+  width: 240px;
   height: auto;
   margin-bottom: 0.5rem;
   filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.6));
 }
+/* ================================================== */
 
 .site-title {
   font-family: 'Basic', sans-serif;
@@ -135,11 +119,6 @@ body::before {
 /* =========================== */
 /* 5. CHAT-PAGE STYLES         */
 /* =========================== */
-/* In chat.html: 
-   <div id="chatWindow"></div>
-   <div class="chat-input-container">…</div>
-   <div class="back-btn-container"><a class="btn">Back to Resources</a></div>
-*/
 #chatWindow {
   width: 100%;
   max-width: 700px;
@@ -250,23 +229,10 @@ body::before {
 }
 
 /* =========================== */
-/* 6. ADDITIONAL PAGES (e.g., Resume, Book) */
+/* 6. ADDITIONAL PAGES (OPTIONAL) */
 /* =========================== */
 /* resume-builder.html and book.html both use .hero-content and .btn */
-/* If you need additional styling for those forms, add it here, e.g.:
-
-.res-builder-form {
-  background-color: rgba(255,255,255,0.05);
-  border-radius: 8px;
-  padding: 1rem;
-  max-width: 700px;
-  margin-bottom: 1rem;
-}
-
-.book-form {
-  /* … */
-}
-*/
+/* You can add more form‐specific styles here if needed. */
 
 /* =========================== */
 /* 7. RESPONSIVE ADJUSTMENTS   */
