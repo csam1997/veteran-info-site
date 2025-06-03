@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Chat Support – Veteran Support Network</title>
+  <title>Chat Support – Shirley</title>
 
   <!-- Google Fonts (Basic & Kaushan Script) -->
   <link
@@ -11,6 +11,79 @@
     rel="stylesheet"
   />
   <link rel="stylesheet" href="style.css" />
+  
+  <style>
+    /* Additional styles for the chat window */
+    .chat-window {
+      width: 100%;
+      max-width: 600px;
+      height: 60vh;
+      margin: 2rem auto 1rem auto;
+      background-color: rgba(255, 255, 255, 0.05);
+      border-radius: 8px;
+      overflow-y: auto;
+      padding: 1rem;
+      font-family: 'Basic', sans-serif;
+    }
+    .message {
+      display: block;
+      margin: 0.5rem 0;
+      padding: 0.5rem 0.75rem;
+      border-radius: 20px;
+      max-width: 85%;
+      line-height: 1.4;
+    }
+    .message.user {
+      background-color: rgba(0, 123, 255, 0.8);
+      color: #fff;
+      align-self: flex-end;
+      margin-left: auto;
+    }
+    .message.shirley {
+      background-color: rgba(255, 255, 255, 0.15);
+      color: #fdfdfd;
+      align-self: flex-start;
+      margin-right: auto;
+    }
+    .chat-input-container {
+      width: 100%;
+      max-width: 600px;
+      margin: 0 auto 2rem auto;
+      display: flex;
+      gap: 0.5rem;
+    }
+    .chat-input {
+      flex: 1;
+      padding: 0.75rem 1rem;
+      border-radius: 20px;
+      border: none;
+      background-color: rgba(255,255,255,0.1);
+      color: #fdfdfd;
+      font-family: 'Basic', sans-serif;
+      font-size: 1rem;
+    }
+    .chat-input::placeholder {
+      color: #ccc;
+    }
+    .send-btn {
+      padding: 0 1.5rem;
+      border: none;
+      border-radius: 20px;
+      background-color: #007bff;
+      color: #fff;
+      font-family: 'Basic', sans-serif;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    .send-btn:disabled {
+      background-color: #555;
+      cursor: not-allowed;
+    }
+    .chat-window-container {
+      display: flex;
+      flex-direction: column;
+    }
+  </style>
 </head>
 <body>
   <div class="hero-container">
@@ -19,21 +92,32 @@
     <header class="hero-content" role="banner">
       <img src="logo123.png" alt="Veteran Support Network Logo" class="logo" />
 
-      <h1 class="site-title">Chat Support</h1>
-      <p class="tagline">Get real-time assistance—AI or live agent.</p>
+      <h1 class="site-title">Shirley: Career Chat</h1>
+      <p class="tagline">Ask Shirley any career‐related question</p>
     </header>
 
-    <main class="hero-nav" aria-label="Chat window">
-      <!-- Placeholder chat area -->
-      <div
-        style="width:100%; max-width:600px; height:300px; background:rgba(255,255,255,0.1); margin:auto; border-radius:8px; color:#fdfdfd; display:flex; align-items:center; justify-content:center; font-family:'Basic',sans-serif;"
-      >
-        Chat window placeholder
+    <div class="hero-nav">
+      <!-- Chat window -->
+      <div id="chatWindow" class="chat-window chat-window-container">
+        <!-- Messages go here -->
+      </div>
+
+      <!-- Input area -->
+      <div class="chat-input-container">
+        <input
+          type="text"
+          id="chatInput"
+          class="chat-input"
+          placeholder="Type your career question..."
+        />
+        <button id="sendBtn" class="send-btn" disabled>Send</button>
       </div>
 
       <!-- Back to Resources button -->
-      <a href="resources.html" class="btn" style="margin-top:2rem;">Back to Resources</a>
-    </main>
+      <a href="resources.html" class="btn" style="display:block; margin:0 auto;">Back to Resources</a>
+    </div>
   </div>
+
+  <script src="chat.js"></script>
 </body>
 </html>
