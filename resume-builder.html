@@ -4,8 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Resume Builder – Veteran Support Network</title>
-
-  <!-- Google Fonts (Basic & Kaushan Script) -->
   <link
     href="https://fonts.googleapis.com/css2?family=Basic&family=Kaushan+Script&display=swap"
     rel="stylesheet"
@@ -17,21 +15,217 @@
     <div class="overlay"></div>
 
     <header class="hero-content" role="banner">
-      <img src="logo123.png" alt="Veteran Support Network Logo" class="logo" />
-
+      <img src="logo123.png" alt="Logo" class="logo" />
       <h1 class="site-title">Resume Builder</h1>
       <p class="tagline">Create a civilian‐ready resume in minutes.</p>
     </header>
 
-    <!-- Placeholder for the form steps -->
-    <main class="hero-nav" aria-label="Resume Builder form">
-      <!-- Example placeholder: you will replace this with step‐by‐step fields -->
-      <p class="intro" style="color:#fdfdfd; margin-top:2rem;">
-        Step 1: Enter your personal information…
-      </p>
-      <!-- “Back to Resources” button -->
-      <a href="resources.html" class="btn" style="margin-top:2rem;">Back to Resources</a>
+    <!-- MULTI‐STEP FORM -->
+    <main id="resumeForm" class="form-container">
+      <!-- Step indicators -->
+      <div id="stepIndicator" class="step-indicator">
+        <span class="step active">1</span>
+        <span class="step">2</span>
+        <span class="step">3</span>
+        <span class="step">4</span>
+        <span class="step">5</span>
+      </div>
+
+      <!-- STEP 1: Personal & Contact Info -->
+      <section class="form-step" data-step="1">
+        <h2>Personal & Contact Information</h2>
+        <label>
+          Full Name *
+          <input type="text" id="fullName" required />
+        </label>
+        <label>
+          Email *
+          <input type="email" id="email" required />
+        </label>
+        <label>
+          Phone *
+          <input type="tel" id="phone" required />
+        </label>
+        <label>
+          LinkedIn (optional)
+          <input type="url" id="linkedin" placeholder="https://linkedin.com/in/..." />
+        </label>
+        <label>
+          Location (City, State) *
+          <input type="text" id="location" required />
+        </label>
+        <div class="form-nav">
+          <button type="button" id="nextBtn1" class="btn">Next</button>
+        </div>
+      </section>
+
+      <!-- STEP 2: Military Service Details -->
+      <section class="form-step hidden" data-step="2">
+        <h2>Military Service Details</h2>
+        <label>
+          Branch of Service *
+          <select id="branch" required>
+            <option value="">Select Branch</option>
+            <option>Army</option>
+            <option>Navy</option>
+            <option>Air Force</option>
+            <option>Marine Corps</option>
+            <option>Space Force</option>
+            <option>Coast Guard</option>
+          </select>
+        </label>
+        <label>
+          Rank at Discharge *
+          <input type="text" id="rank" placeholder="e.g. Captain" required />
+        </label>
+        <label>
+          Dates of Service *
+          <input type="month" id="serviceStart" required /> – 
+          <input type="month" id="serviceEnd" required />
+        </label>
+        <label>
+          Last Duty Station *
+          <input type="text" id="dutyStation" required />
+        </label>
+        <label>
+          Primary MOS/Rate (e.g. “Infantry Platoon Leader”) *
+          <input type="text" id="mos" required />
+        </label>
+        <label>
+          Key Responsibilities (bullets) *
+          <textarea id="militaryResponsibilities" rows="4" placeholder="• ..." required></textarea>
+        </label>
+        <label>
+          Honors/Awards (optional)
+          <textarea id="honors" rows="3" placeholder="• ..."></textarea>
+        </label>
+        <div class="form-nav">
+          <button type="button" id="prevBtn2" class="btn">Back</button>
+          <button type="button" id="nextBtn2" class="btn">Next</button>
+        </div>
+      </section>
+
+      <!-- STEP 3: Civilian Experience & Education -->
+      <section class="form-step hidden" data-step="3">
+        <h2>Civilian Work & Education</h2>
+        <!-- Employment History (repeatable) -->
+        <div id="employmentContainer">
+          <div class="employment-block">
+            <label>
+              Job Title *
+              <input type="text" class="jobTitle" required />
+            </label>
+            <label>
+              Company/Organization *
+              <input type="text" class="companyName" required />
+            </label>
+            <label>
+              Location *
+              <input type="text" class="jobLocation" required />
+            </label>
+            <label>
+              Dates of Employment *
+              <input type="month" class="jobStart" required /> – 
+              <input type="month" class="jobEnd" required />
+            </label>
+            <label>
+              Responsibilities *
+              <textarea class="jobDesc" rows="4" required placeholder="• ..."></textarea>
+            </label>
+          </div>
+        </div>
+        <button type="button" id="addEmployment" class="btn secondary">+ Add Another Job</button>
+
+        <!-- Education (repeatable) -->
+        <div id="educationContainer" style="margin-top:2rem;">
+          <div class="education-block">
+            <label>
+              Degree *
+              <select class="degree" required>
+                <option value="">Select</option>
+                <option>High School Diploma</option>
+                <option>Associate’s</option>
+                <option>Bachelor’s</option>
+                <option>Master’s</option>
+                <option>Doctorate</option>
+              </select>
+            </label>
+            <label>
+              Institution *
+              <input type="text" class="institution" required />
+            </label>
+            <label>
+              Location *
+              <input type="text" class="eduLocation" required />
+            </label>
+            <label>
+              Graduation Year *
+              <input type="number" class="graduationYear" min="1900" max="2100" required />
+            </label>
+            <label>
+              Major/Field *
+              <input type="text" class="major" required />
+            </label>
+          </div>
+        </div>
+        <button type="button" id="addEducation" class="btn secondary">+ Add Another Education</button>
+
+        <div class="form-nav" style="margin-top:2rem;">
+          <button type="button" id="prevBtn3" class="btn">Back</button>
+          <button type="button" id="nextBtn3" class="btn">Next</button>
+        </div>
+      </section>
+
+      <!-- STEP 4: Skills & Certifications -->
+      <section class="form-step hidden" data-step="4">
+        <h2>Skills & Certifications</h2>
+        <label>
+          Soft Skills (comma‐separate) *
+          <input type="text" id="softSkills" placeholder="e.g. Leadership, Teamwork" required />
+        </label>
+        <label>
+          Hard Skills (comma‐separate) *
+          <input type="text" id="hardSkills" placeholder="e.g. Microsoft Office, Cybersecurity" required />
+        </label>
+        <div id="certContainer">
+          <div class="cert-block">
+            <label>
+              Certification *
+              <input type="text" class="certName" placeholder="e.g. PMP" required />
+            </label>
+            <label>
+              Year Earned *
+              <input type="number" class="certYear" min="1900" max="2100" required />
+            </label>
+          </div>
+        </div>
+        <button type="button" id="addCert" class="btn secondary">+ Add Another Certification</button>
+
+        <div class="form-nav" style="margin-top:2rem;">
+          <button type="button" id="prevBtn4" class="btn">Back</button>
+          <button type="button" id="nextBtn4" class="btn">Next</button>
+        </div>
+      </section>
+
+      <!-- STEP 5: Review & Generate -->
+      <section class="form-step hidden" data-step="5">
+        <h2>Review & Generate Resume</h2>
+        <p class="intro" style="color:#fdfdfd;">
+          Please review all your information. When you’re ready, click “Generate Resume” to let our AI craft a polished CV for you.
+        </p>
+
+        <div class="form-nav" style="margin-top:2rem;">
+          <button type="button" id="prevBtn5" class="btn">Back</button>
+          <button type="button" id="generateResume" class="btn">Generate Resume</button>
+        </div>
+
+        <!-- PLACEHOLDER for “Downloading…” message or error -->
+        <div id="statusMessage" style="margin-top:1rem;color:#f2f2f2;"></div>
+      </section>
     </main>
   </div>
+
+  <!-- Include a small script block for navigation & collection -->
+  <script src="resume-builder.js"></script>
 </body>
 </html>
