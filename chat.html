@@ -2,230 +2,50 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Chat Support – Shirley</title>
-
-  <!-- Google Fonts (Basic & Kaushan Script) -->
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+  <title>Shirley: Career Chat</title>
+  <!-- Load Google Fonts -->
   <link
-    href="https://fonts.googleapis.com/css2?family=Basic&family=Kaushan+Script&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500&family=Playfair+Display:wght@400;600&display=swap"
     rel="stylesheet"
   />
-
-  <!-- Link to your existing global CSS -->
   <link rel="stylesheet" href="style.css" />
-
-  <!-- Chat-specific styling -->
-  <style>
-    /* Ensure the entire page uses the full viewport */
-    html, body {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-    }
-    .hero-container {
-      position: relative;
-      width: 100%;
-      height: 100%;
-      background-color: #000; /* or your desired background */
-      background-image: none; /* remove gradients if you prefer pure black */
-    }
-
-    /* Overlay (optional) */
-    .overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0,0,0,0.2);
-      z-index: 1;
-    }
-
-    /* Header: logo + title + tagline, fixed-height to push chat below */
-    .header {
-      position: relative;
-      z-index: 2; /* above the overlay */
-      text-align: center;
-      padding: 2rem 1rem 1rem 1rem; /* give some top padding */
-      color: #f2f2f2;
-    }
-    .header img.logo {
-      max-width: 150px;
-      width: 30%;
-      height: auto;
-      margin-bottom: 1rem;
-      filter: drop-shadow(0 0 8px rgba(255,255,255,0.6));
-    }
-    .header h1.site-title {
-      font-family: 'Basic', sans-serif;
-      font-size: 2.5rem;
-      margin: 0.25rem 0;
-      letter-spacing: 1px;
-      text-shadow: 0 2px 6px rgba(0,0,0,0.4);
-    }
-    .header p.tagline {
-      font-family: 'Basic', sans-serif;
-      font-size: 1rem;
-      margin: 0;
-      opacity: 0.9;
-      text-shadow: 0 1px 4px rgba(0,0,0,0.3);
-    }
-
-    /* Chat Area Container: sits immediately below header */
-    .chat-section {
-      position: relative;
-      z-index: 2; /* above the overlay */
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 1rem 0;
-      height: calc(100% - 180px); /* subtract header + input + back-btn heights */
-    }
-
-    /* Chat window (message bubbles) */
-    #chatWindow {
-      width: 90%;
-      max-width: 600px;
-      flex: 1; /* fill available vertical space */
-      background-color: rgba(255, 255, 255, 0.05);
-      border-radius: 8px;
-      overflow-y: auto;
-      padding: 1rem;
-      font-family: 'Basic', sans-serif;
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-      margin-bottom: 1rem;
-      color: #fdfdfd;
-    }
-    .chat-section #chatWindow .message {
-      display: inline-block;
-      max-width: 80%;
-      padding: 0.5rem 0.75rem;
-      border-radius: 20px;
-      line-height: 1.4;
-      word-wrap: break-word;
-    }
-    .chat-section #chatWindow .message.user {
-      background-color: rgba(0, 123, 255, 0.8);
-      color: #fff;
-      align-self: flex-end;
-    }
-    .chat-section #chatWindow .message.shirley {
-      background-color: rgba(255, 255, 255, 0.15);
-      color: #fdfdfd;
-      align-self: flex-start;
-    }
-
-    /* Input container (immediately below chat window) */
-    .chat-input-container {
-      width: 90%;
-      max-width: 600px;
-      display: flex;
-      gap: 0.5rem;
-      margin-bottom: 1rem;
-    }
-    .chat-input-container .chat-input {
-      flex: 1;
-      padding: 0.75rem 1rem;
-      border-radius: 20px;
-      border: none;
-      background-color: rgba(255, 255, 255, 0.1);
-      color: #fdfdfd;
-      font-family: 'Basic', sans-serif;
-      font-size: 1rem;
-    }
-    .chat-input-container .chat-input::placeholder {
-      color: #ccc;
-    }
-    .chat-input-container .send-btn {
-      padding: 0 1.25rem;
-      border: none;
-      border-radius: 20px;
-      background-color: #007bff;
-      color: #fff;
-      font-family: 'Basic', sans-serif;
-      font-size: 1rem;
-      cursor: pointer;
-      flex-shrink: 0;
-    }
-    .chat-input-container .send-btn:disabled {
-      background-color: #555;
-      cursor: not-allowed;
-    }
-
-    /* Back to Resources button at very bottom */
-    .back-btn-container {
-      width: 90%;
-      max-width: 600px;
-      text-align: center;
-      margin-bottom: 1.5rem;
-    }
-    .back-btn-container .btn {
-      margin: 0;
-    }
-
-    /* Responsive tweaks */
-    @media (max-width: 600px) {
-      .header img.logo {
-        width: 50%;
-      }
-      .header h1.site-title {
-        font-size: 2rem;
-      }
-      #chatWindow {
-        font-size: 0.9rem;
-      }
-      .chat-input-container .chat-input {
-        font-size: 0.9rem;
-      }
-      .chat-input-container .send-btn {
-        font-size: 0.9rem;
-        padding: 0 1rem;
-      }
-    }
-  </style>
 </head>
-<body>
-  <div class="hero-container">
-    <div class="overlay"></div>
+<body class="hero-container chat-hero">
+  <!-- Slight dark‐gray background courtesy of .chat-hero -->
 
-    <!-- 1) HEADER: Logo + Title + Tagline -->
-    <div class="header">
-      <img src="logo123.png" alt="Veteran Support Network Logo" class="logo" />
+  <div class="overlay"></div>
 
-      <h1 class="site-title">Shirley: Career Chat</h1>
-      <p class="tagline">Ask Shirley any career‐related question</p>
-    </div>
+  <header class="hero-content">
+    <img src="logo123.png" alt="Veteran Support Network Logo" class="logo" />
+    <!-- Updated heading -->
+    <h1 class="site-title">Your Personal Smart Bot Shirley</h1>
+    <!-- Tagline: now white (per CSS) -->
+    <p class="tagline">Ask Shirley any career-related question</p>
+  </header>
 
-    <!-- 2) CHAT SECTION: Chat window + Input + Back button -->
-    <div class="chat-section">
-      <!-- Chat window -->
-      <div id="chatWindow">
-        <div class="message shirley">
-          Hello! I’m Shirley, your career support assistant. How can I help you today?
-        </div>
-      </div>
-
-      <!-- Input area -->
-      <div class="chat-input-container">
-        <input
-          type="text"
-          id="chatInput"
-          class="chat-input"
-          placeholder="Type your career question..."
-        />
-        <button id="sendBtn" class="send-btn" disabled>Send</button>
-      </div>
-
-      <!-- Back to Resources button -->
-      <div class="back-btn-container">
-        <a href="resources.html" class="btn">Back to Resources</a>
-      </div>
-    </div>
+  <!-- Chat window: only one #chatWindow -->
+  <div id="chatWindow">
+    <!-- JavaScript will append .message bubbles here -->
   </div>
 
-  <!-- Attach your chat logic -->
+  <div class="chat-input-container">
+    <input
+      id="chatInput"
+      class="chat-input"
+      type="text"
+      placeholder="Type your career question…"
+    />
+    <button id="sendBtn" class="send-btn" disabled>Send</button>
+  </div>
+
+  <div class="back-btn-container">
+    <a href="resources.html" class="btn">Back to Resources</a>
+  </div>
+
   <script src="chat.js"></script>
 </body>
 </html>
