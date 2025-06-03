@@ -1,3 +1,14 @@
+/* =========================== */
+/* 0. IMPORT GOOGLE FONTS      */
+/* =========================== */
+
+/*  
+   - Playfair Display: for .site-title and .tagline
+   - Dancing Script: for .quote-text paragraph
+*/
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500&family=Playfair+Display:wght@400;600&display=swap');
+
+
 /* ============================ */
 /* 1. GLOBAL RESET & BACKGROUND */
 /* ============================ */
@@ -11,13 +22,13 @@ html, body {
   width: 100%;
   height: 100%;
   background-color: #f2f2f2; /* Very light gray background */
-  font-family: 'Arial', sans-serif;
   overflow-x: hidden;
 }
 
 body {
   overflow-y: auto;
-  color: #111111; /* Dark text for contrast on light background */
+  color: #111111; /* Dark text for contrast */
+  font-family: 'Arial', sans-serif; /* Fallback default */
 }
 
 /* =========================== */
@@ -27,20 +38,20 @@ body {
   position: relative;
   width: 100%;
   min-height: 100vh; /* Fill viewport */
-  background-color: #f2f2f2; /* Very light gray */
+  background-color: #f2f2f2; /* Light gray */
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 .overlay {
-  /* Optional: remove or adjust if you no longer want a dark overlay */
+  /* Optional: a very subtle dark overlay */
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0,0,0,0.05); /* Very subtle dark overlay */
+  background-color: rgba(0,0,0,0.05);
   z-index: 1;
 }
 
@@ -59,32 +70,53 @@ body {
   text-align: center;
 }
 
-/* LOGO: 240px wide, centered */
 .hero-content .logo {
-  width: 480px;
+  width: 240px; /* Double‐sized logo */
   height: auto;
   margin-bottom: 0.5rem;
   filter: drop-shadow(0 0 6px rgba(0, 0, 0, 0.1));
 }
 
+/* Main Title: “Veteran Support Network” */
 .site-title {
-  font-family: 'Basic', sans-serif;
+  font-family: 'Playfair Display', serif;
   font-size: 2.5rem;
-  color: #111111; /* Dark title text */
+  color: #111111; /* Dark text */
   margin: 0;
-  text-shadow: 0 1px 2px rgba(255,255,255,0.6);
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.6);
 }
 
+/* Tagline: “Supporting Veterans’ Journey Back to Civilian Life” */
 .tagline {
-  font-family: 'Basic', sans-serif;
+  font-family: 'Playfair Display', serif;
   font-size: 1rem;
-  color: #333333; /* Slightly lighter than pure black */
+  color: #333333; /* Slightly lighter dark */
   margin: 0.25rem 0 1.5rem 0;
-  text-shadow: 0 1px 1px rgba(255,255,255,0.7);
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.7);
 }
 
 /* =========================== */
-/* 4. HOME & RESOURCES NAV BAR */
+/* 4. QUOTE PARAGRAPH (COLUMNS) */
+/* =========================== */
+/* The paragraph in Dancing Script */
+.quote-text {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.1rem;
+  color: #111111; /* Dark for readability */
+  margin: 0 0 1.5rem 0;
+  line-height: 1.6;
+}
+
+/* Center‐align on wide screens, collapse on narrow */
+.quote-container {
+  max-width: 700px;
+  margin: 0 auto 1.5rem auto;
+  padding: 0 1rem;
+  text-align: center;
+}
+
+/* =========================== */
+/* 5. HOME & RESOURCES NAV BAR */
 /* =========================== */
 /* Matches exactly <nav class="hero-nav"> … <a class="btn">… */
 .hero-nav {
@@ -99,12 +131,12 @@ body {
 .hero-nav .btn {
   padding: 0.8rem 1.5rem;
   background-color: #ffffff;    /* Solid white button */
-  color: #1f2a44;               /* Dark blue text */
-  font-family: 'Basic', sans-serif;
+  color: #1f2a44;               /* Dark navy text */
+  font-family: 'Playfair Display', serif;
   font-weight: 600;
   font-size: 1rem;
   text-decoration: none;
-  border: 2px solid #1f2a44;    /* Dark blue border */
+  border: 2px solid #1f2a44;    /* Dark navy border */
   border-radius: 6px;
   transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
@@ -112,16 +144,16 @@ body {
 
 .hero-nav .btn:hover,
 .hero-nav .btn:focus {
-  background-color: #1f2a44;    /* Dark blue on hover */
+  background-color: #1f2a44;    /* Dark navy on hover */
   color: #ffffff;               /* White text on hover */
   transform: translateY(-2px);
   border-color: #1f2a44;
 }
 
 /* =========================== */
-/* 5. CHAT-PAGE STYLES         */
+/* 6. CHAT-PAGE STYLES         */
 /* =========================== */
-/* In chat.html: 
+/* In chat.html:
    <div id="chatWindow"></div>
    <div class="chat-input-container">…</div>
    <div class="back-btn-container"><a class="btn">Back to Resources</a></div>
@@ -130,7 +162,7 @@ body {
   width: 100%;
   max-width: 700px;
   height: 45vh; /* Leaves room for input + back button */
-  background-color: #ffffff;  /* White container for conversation */
+  background-color: #ffffff;  /* White container */
   border-radius: 8px;
   overflow-y: auto;
   padding: 1rem;
@@ -182,7 +214,7 @@ body {
   border: 2px solid #cccccc;
   background-color: #ffffff; /* White input field */
   color: #111111;
-  font-family: 'Basic', sans-serif;
+  font-family: 'Playfair Display', serif;
   font-size: 1rem;
 }
 
@@ -195,9 +227,9 @@ body {
   height: 48px;
   border: none;
   border-radius: 24px;
-  background-color: #1f2a44; /* Dark blue send button */
+  background-color: #1f2a44; /* Dark navy send */
   color: #ffffff;
-  font-family: 'Basic', sans-serif;
+  font-family: 'Playfair Display', serif;
   font-size: 1rem;
   cursor: pointer;
   flex-shrink: 0;
@@ -221,8 +253,8 @@ body {
   margin: 0;
   padding: 0.8rem 1.5rem;
   background-color: #ffffff; /* White button */
-  color: #1f2a44;            /* Dark blue text */
-  font-family: 'Basic', sans-serif;
+  color: #1f2a44;            /* Dark navy text */
+  font-family: 'Playfair Display', serif;
   font-weight: 600;
   font-size: 1rem;
   border: 2px solid #1f2a44;
@@ -233,20 +265,20 @@ body {
 
 .back-btn-container .btn:hover,
 .back-btn-container .btn:focus {
-  background-color: #1f2a44; /* Dark blue on hover */
+  background-color: #1f2a44; /* Dark navy on hover */
   color: #ffffff;
   transform: translateY(-2px);
   border-color: #1f2a44;
 }
 
 /* =========================== */
-/* 6. ADDITIONAL PAGES (OPTIONAL) */
+/* 7. ADDITIONAL PAGES (OPTIONAL) */
 /* =========================== */
 /* resume-builder.html and book.html both use .hero-content and .btn */
-/* You can add more form-specific styles here if needed. */
+/* Add further form styles below if needed. */
 
 /* =========================== */
-/* 7. RESPONSIVE ADJUSTMENTS   */
+/* 8. RESPONSIVE ADJUSTMENTS   */
 /* =========================== */
 @media (max-width: 800px) {
   .site-title {
@@ -268,6 +300,10 @@ body {
     max-width: 90%;
     gap: 0.75rem;
   }
+  .quote-container {
+    max-width: 90%;
+    padding: 0 1rem;
+  }
 }
 
 @media (max-width: 500px) {
@@ -287,5 +323,8 @@ body {
   }
   .send-btn {
     width: 100%;
+  }
+  .quote-text {
+    font-size: 1rem;
   }
 }
