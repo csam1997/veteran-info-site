@@ -1,6 +1,71 @@
 /* style.css */
 
-/* …previous CSS remains unchanged… */
+/* Base reset + full‐viewport setup */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* HERO CONTAINER: full‐viewport, subtle texture */
+.hero-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-color: #b3b3b3; /* Mid‐grey base */
+  background-image:
+    linear-gradient(0deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 2px 2px; /* Subtle noise pattern */
+}
+
+/* DARK OVERLAY: improves text/logo contrast */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* CENTERED CONTENT */
+.hero-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -60%);
+  text-align: center;
+  z-index: 2; /* Above overlay */
+}
+
+/* LOGO */
+.logo {
+  max-width: 600px;
+  width: 80%;
+  height: auto;
+  margin-bottom: 1.5rem;
+}
+
+/* SITE TITLE (Playfair Display) */
+.site-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  margin: 0;
+  color: #f2f2f2; /* Off-white */
+  letter-spacing: 1px;
+}
+
+/* TAGLINE (Playfair Display) */
+.tagline {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.25rem;
+  margin-top: 0.5rem;
+  color: #eaeaea;
+  opacity: 0.9;
+}
 
 /* INTRO PARAGRAPH (Kaushan Script) */
 .intro {
@@ -15,19 +80,77 @@
   opacity: 0.95;
 }
 
-/* Responsive adjustments (if needed) */
+/* NAVIGATION / BUTTONS */
+.hero-nav {
+  position: absolute;
+  bottom: 7%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 1rem;
+  z-index: 2; /* Above overlay */
+}
+
+/* BUTTON STYLE */
+.btn {
+  display: inline-block;
+  padding: 0.9rem 1.7rem;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #004080;
+  text-decoration: none;
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* BUTTON HOVER/FOCUS */
+.btn:hover,
+.btn:focus {
+  background-color: #004080;
+  color: #f2f2f2;
+  outline: none;
+}
+
+/* RESPONSIVE ADJUSTMENTS */
 @media (max-width: 800px) {
+  .logo {
+    width: 90%;
+  }
+  .site-title {
+    font-size: 2.5rem;
+  }
+  .tagline {
+    font-size: 1.1rem;
+  }
   .intro {
     font-size: 1.2rem;
     max-width: 85%;
   }
+  .btn {
+    padding: 0.75rem 1.4rem;
+    font-size: 1rem;
+  }
+  .hero-nav {
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    bottom: 5%;
+  }
 }
 
 @media (max-width: 500px) {
+  .site-title {
+    font-size: 2rem;
+  }
+  .tagline {
+    font-size: 1rem;
+  }
   .intro {
     font-size: 1.1rem;
     max-width: 90%;
   }
+  .btn {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
 }
-
-/* …rest of CSS remains unchanged… */
