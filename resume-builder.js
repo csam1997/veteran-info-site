@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Initialize: show step 1
   showStep(currentStep);
-
+  
   // NAVIGATION BUTTONS
   document.getElementById('nextBtn1').addEventListener('click', () => {
     // Basic validation: ensure required fields on step 1 are filled
@@ -239,3 +239,134 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+// Add after gathering data in the 'Generate Resume' button handler
+
+  function updatePreview(data) {
+    const preview = document.getElementById('resume-preview');
+    preview.innerHTML = `
+      <h1>${data.fullName}</h1>
+      <p>Email: ${data.email} | Phone: ${data.phone}</p>
+      <p>Location: ${data.location}</p>
+      <p>LinkedIn: ${data.linkedin || 'N/A'}</p>
+
+      <h2>Professional Summary</h2>
+      <p>${data.summary || 'No summary provided'}</p>
+
+      <h2>Education</h2>
+      ${data.education.map(edu => `
+        <p><strong>${edu.degree}</strong>, ${edu.institution} (${edu.gradYear})<br/>
+        Major: ${edu.major}</p>
+      `).join('')}
+
+      <h2>Experience</h2>
+      ${data.employment.map(job => `
+        <p><strong>${job.title}</strong> at ${job.company} (${job.start} - ${job.end})<br/>
+        ${job.desc}</p>
+      `).join('')}
+
+      <h2>Skills</h2>
+      <p><strong>Soft Skills:</strong> ${data.softSkills.join(', ')}</p>
+      <p><strong>Hard Skills:</strong> ${data.hardSkills.join(', ')}</p>
+
+      <h2>Certifications</h2>
+      ${data.certifications.map(cert => `
+        <p>${cert.name} (${cert.year})</p>
+      `).join('')}
+    `;
+  } 
+  // JavaScript Functionality (Fixed Flashing by applying default active class after DOM load)
+  // JavaScript to enable navigation and input preview
+  window.addEventListener("DOMContentLoaded", () => {
+    const steps = document.querySelectorAll(".form-step");
+    const tabs = document.querySelectorAll(".step");
+    const nextBtns = document.querySelectorAll(".btn.next");
+    const prevBtns = document.querySelectorAll(".btn.prev");
+    let currentStep = 0;
+
+    function showStep(stepIndex) {
+      steps.forEach((step, idx) => step.classList.toggle("active", idx === stepIndex));
+      tabs.forEach((tab, idx) => tab.classList.toggle("active", idx === stepIndex));
+    }
+
+    function updatePreview() {
+      const preview = document.getElementById("resume-preview");
+      preview.innerHTML = `
+        <h3>${document.getElementById("jobTitle").value}</h3>
+        <p>${document.getElementById("firstName").value} ${document.getElementById("lastName").value}</p>
+        <p>${document.getElementById("email").value} | ${document.getElementById("phone").value}</p>
+        <p>${document.getElementById("address").value}, ${document.getElementById("cityState").value}, ${document.getElementById("country").value}</p>
+        <h4>Experience</h4>
+        <p>${document.getElementById("expJobTitle").value} at ${document.getElementById("company").value}</p>
+        <p>${document.getElementById("startDate").value} to ${document.getElementById("endDate").value}</p>
+        <p>${document.getElementById("jobDesc").value}</p>
+        <h4>Skills & Certifications</h4>
+        <p>${document.getElementById("skills").value}</p>
+        <p>${document.getElementById("certifications").value}</p>
+      `;
+    }
+
+    nextBtns.forEach(btn => btn.addEventListener("click", () => {
+      if (currentStep < steps.length - 1) {
+        currentStep++;
+        showStep(currentStep);
+        updatePreview();
+      }
+    }));
+
+    prevBtns.forEach(btn => btn.addEventListener("click", () => {
+      if (currentStep > 0) {
+        currentStep--;
+        showStep(currentStep);
+      }
+    }));
+
+    showStep(currentStep);
+  });
+// (Removed duplicate navigation logic and variable declarations)
+
+// Live Resume Preview
+const fields = ['jobTitle', 'firstName', 'lastName', 'email', 'phone', 'address', 'cityState', 'country', 'expJobTitle', 'company', 'startDate', 'endDate', 'jobDesc', 'skills', 'certifications'];
+fields.forEach(id => {
+  document.getElementById(id).addEventListener('input', updatePreview);
+});
+
+function updatePreview() {
+  document.getElementById('resume-preview').innerHTML = `
+    <h3>${document.getElementById('jobTitle').value || ''}</h3>
+    <p>${document.getElementById('firstName').value || ''} ${document.getElementById('lastName').value || ''}</p>
+    <p>${document.getElementById('email').value || ''} | ${document.getElementById('phone').value || ''}</p>
+    <p>${document.getElementById('address').value || ''}, ${document.getElementById('cityState').value || ''}, ${document.getElementById('country').value || ''}</p>
+    <h4>Experience</h4>
+    <p>${document.getElementById('expJobTitle').value || ''} at ${document.getElementById('company').value || ''}</p>
+    <p>${document.getElementById('startDate').value || ''} to ${document.getElementById('endDate').value || ''}</p>
+    <p>${document.getElementById('jobDesc').value || ''}</p>
+    <h4>Skills & Certifications</h4>
+    <p>${document.getElementById('skills').value || ''}</p>
+    <p>${document.getElementById('certifications').value || ''}</p>
+  `;
+}
+
+  const steps = document.querySelectorAll(".form-step");
+  const nextButtons = document.querySelectorAll(".btn.next");
+  const prevButtons = document.querySelectorAll(".btn.prev");
+  let current = 0;
+
+  function showStep(index) {
+    steps.forEach((step, i) => step.classList.toggle("active", i === index));
+  }
+
+  nextButtons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      current++;
+      showStep(current);
+      updatePreview();
+    });
+  });
+
+  prevButtons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      current--;
+      showStep(current);
+    });
+  });
+  // (Removed duplicate navigation logic and variable declarations)
