@@ -1,46 +1,47 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Veteran Support Network</title>
 
-  <!-- Either the @import in style.css OR this link -->
+  <!-- Google Fonts: Dancing Script, Playfair Display, Basic, Kaushan Script -->
   <link
-    href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500&family=Playfair+Display:wght@400;600&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500&family=Playfair+Display:wght@400;600&family=Basic&family=Kaushan+Script&display=swap"
     rel="stylesheet"
   />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="hero-container">
+  <div class="hero-container homepage-hero">
     <div class="overlay"></div>
 
-    <header class="hero-content">
+    <header class="hero-content" role="banner">
+      <!-- Logo (with drop-shadow glow) -->
       <img
         src="logo123.png"
         alt="Veteran Support Network Logo"
-        class="logo"
+        class="logo fade-in-delay-1"
       />
-      <h1 class="site-title">Veteran Support Network</h1>
-      <p class="tagline">
+
+      <!-- Site Title (Playfair Display, or Basic on light background) -->
+      <h1 class="site-title fade-in-delay-2">
+        Veteran Support Network
+      </h1>
+
+      <!-- Tagline (Playfair Display) -->
+      <p class="tagline fade-in-delay-3">
         Supporting Veterans’ Journey Back to Civilian Life
+      </p>
+
+      <!-- Quote/Intro Paragraph (Kaushan Script) -->
+      <p class="intro fade-in-delay-4">
+        “We stand beside every veteran, offering guidance, resources, and a community to ensure no one
+        walks the civilian path alone.”
       </p>
     </header>
 
-    <!-- THIS is the container + paragraph that must be in your HTML -->
-    <div class="quote-container">
-      <p class="quote-text">
-        “We stand beside every veteran, offering guidance, resources,
-        and a community to ensure no one walks the civilian path alone.”
-      </p>
-    </div>
-
-    <nav class="hero-nav" aria-label="Primary navigation">
+    <nav class="hero-nav fade-in-delay-5" aria-label="Primary navigation">
       <a href="#" class="btn">About</a>
       <a href="resources.html" class="btn">Resources</a>
       <a href="#" class="btn">Get Help</a>
