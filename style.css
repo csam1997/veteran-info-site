@@ -2,8 +2,6 @@
 /* 0. IMPORT GOOGLE FONTS      */
 /* ============================ */
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500&family=Playfair+Display:wght@400;600&display=swap');
-/* ^^^^^^^^^^^^^^ YOU MUST ADD THIS ^^^^^^^^^^^^^^ */
-
 
 /* ============================ */
 /* 1. GLOBAL RESET & BACKGROUND */
@@ -17,7 +15,7 @@
 html, body {
   width: 100%;
   height: 100%;
-  background-color: #f2f2f2; /* Light gray site‐wide background */
+  background-color: #f2f2f2; /* Light gray site-wide background */
   overflow-x: hidden;
 }
 
@@ -30,7 +28,7 @@ body {
 /* =========================== */
 /* 2. HERO CONTAINER (ALL PAGES) */
 /* =========================== */
-/* For chat.html, we’ll override the background in the .hero‐container later */
+/* For chat.html, we’ll override the background in the .hero-container later */
 .hero-container {
   position: relative;
   width: 100%;
@@ -67,7 +65,7 @@ body {
 }
 
 .hero-content .logo {
-  width: 240px; /* Double‐sized logo */
+  width: 240px; /* Double-sized logo */
   height: auto;
   margin-bottom: 0.5rem;
   filter: drop-shadow(0 0 6px rgba(0, 0, 0, 0.1));
@@ -82,12 +80,9 @@ body {
   text-shadow: 0 1px 2px rgba(255, 255, 255, 0.6);
 }
 
-/* Tagline: VISIBLE on light or dark background */
-/* ^^^^^^^^^^^^^^ Currently you have a single .tagline rule with color: #fff ^^^^^^^^^^^^^^ */
-
-/* REPLACE that with two scoped rules below: */
-
-/* 3A) Homepage tagline (dark gray text on light gray) */
+/* =========================== */
+/* 4A. HOMEPAGE TAGLINE (DARK) */
+/* =========================== */
 .homepage-hero .tagline {
   font-family: 'Playfair Display', serif;
   font-size: 1rem;
@@ -96,7 +91,9 @@ body {
   text-shadow: 0 1px 1px rgba(255, 255, 255, 0.7);
 }
 
-/* 3B) Chat page tagline (white text on dark gray background) */
+/* =========================== */
+/* 4B. CHAT-PAGE TAGLINE (WHITE) */
+/* =========================== */
 .chat-hero .tagline {
   font-family: 'Playfair Display', serif;
   font-size: 1rem;
@@ -106,7 +103,7 @@ body {
 }
 
 /* =========================== */
-/* 4. HOME & RESOURCES NAV BAR */
+/* 5. HOME & RESOURCES NAV BAR */
 /* =========================== */
 .hero-nav {
   display: flex;
@@ -140,13 +137,12 @@ body {
 }
 
 /* =========================== */
-/* 5. QUOTE PARAGRAPH (HOMEPAGE) */
+/* 6. QUOTE PARAGRAPH (HOMEPAGE) */
 /* =========================== */
-/* ^^^^^^^^^^^^^^ This block is missing in your CSS ^^^^^^^^^^^^^^ */
 .quote-text {
   font-family: 'Dancing Script', cursive;
-  font-size: 2rem;     /* big cursive text */
-  color: #111111;      /* visible on light gray */
+  font-size: 2rem;     /* Big cursive text */
+  color: #111111;      /* Visible on light gray */
   margin: 0 0 1.5rem 0;
   line-height: 2.2;
 }
@@ -159,18 +155,25 @@ body {
 }
 
 /* =========================== */
-/* 6. CHAT-PAGE SPECIFIC STYLES */
+/* 7. CHAT-PAGE SPECIFIC STYLES */
 /* =========================== */
+
+/* Change the chat page’s background to light gray instead of dark */
 .chat-hero {
-  background-color: #222222; /* Dark gray (only for chat.html) */
+  background-color: #f2f2f2; /* Light-gray page background */
 }
 
-/* Chat window */
+/* Ensure the chat-page title is visible against the light-gray */
+.chat-hero .site-title {
+  color: #1f2a44; /* Dark navy or black text on light gray */
+}
+
+/* The chat window itself should be slightly darker than the page background */
 #chatWindow {
   width: 100%;
   max-width: 700px;
-  height: 45vh; /* Leaves room for input + back button */
-  background-color: #ffffff;  /* White container for chat bubbles */
+  height: 45vh;              /* Leaves room for input + back button */
+  background-color: #fafafa; /* Slightly darker than #f2f2f2 */
   border-radius: 8px;
   overflow-y: auto;
   padding: 1rem;
@@ -182,6 +185,7 @@ body {
   z-index: 2;
 }
 
+/* Each message bubble */
 .message {
   display: inline-block;
   max-width: 80%;
@@ -191,14 +195,14 @@ body {
   word-wrap: break-word;
 }
 
-/* User’s messages: dark blue bubbles, white text */
+/* User’s messages: dark blue bubbles with white text */
 .message.user {
   background-color: #007bff; /* Blue */
   color: #ffffff;
   align-self: flex-end;
 }
 
-/* Shirley’s messages: light gray bubble, dark text */
+/* Shirley’s messages: light gray bubble with dark text */
 .message.shirley {
   background-color: #e0e0e0; /* Light gray */
   color: #111111;
@@ -235,7 +239,7 @@ body {
   height: 48px;
   border: none;
   border-radius: 24px;
-  background-color: #1f2a44; /* Dark navy send */
+  background-color: #1f2a44; /* Dark navy send button */
   color: #ffffff;
   font-family: 'Playfair Display', serif;
   font-size: 1rem;
@@ -280,14 +284,20 @@ body {
 }
 
 /* =========================== */
-/* 7. RESPONSIVE ADJUSTMENTS   */
+/* 8. RESPONSIVE ADJUSTMENTS   */
 /* =========================== */
 @media (max-width: 800px) {
   .site-title {
     font-size: 2rem;
   }
-  /* Need to add homepage-hero and chat-hero tagline adjustments here */
-  /* e.g.: .homepage-hero .tagline { font-size: 0.9rem; } */
+  /* Adjust homepage tagline for smaller screens */
+  .homepage-hero .tagline {
+    font-size: 0.9rem;
+  }
+  /* Adjust chat tagline for smaller screens */
+  .chat-hero .tagline {
+    font-size: 0.9rem;
+  }
   #chatWindow {
     height: 50vh;
     max-width: 90%;
@@ -306,25 +316,4 @@ body {
   }
 }
 
-@media (max-width: 500px) {
-  .site-title {
-    font-size: 1.6rem;
-  }
-  /* Need to adjust tagline for small screens: 
-     .homepage-hero .tagline { font-size: 0.8rem; }
-     .chat-hero .tagline { font-size: 0.8rem; } */
-  #chatWindow {
-    height: 40vh;
-  }
-  .chat-input-container {
-    flex-direction: column;
-    gap: 0.25rem;
-  }
-  .send-btn {
-    width: 100%;
-  }
-  .quote-text {
-    font-size: 1.5rem;
-    line-height: 1.8;
-  }
-}
+@me
