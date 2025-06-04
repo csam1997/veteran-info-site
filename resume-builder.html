@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resume Builder – Veteran Support Network</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Basic&family=Kaushan+Script&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="resume-builder-wrapper">
+      <header class="header">
+        <img src="logo123.png" alt="Veteran Support Network Logo" class="logo" />
+        <h1>Resume Builder</h1>
+        <p class="subheading">Create a civilian-ready resume in minutes.</p>
+      </header>
+
+      <nav class="form-stepper">
+        <div class="step active" data-step="0">1. Personal Information</div>
+        <div class="step" data-step="1">2. Experience</div>
+        <div class="step" data-step="2">3. Skills & Certifications</div>
+        <div class="step" data-step="3">4. Review</div>
+      </nav>
+
+      <main class="form-container">
+        <form id="resumeForm">
+          <section class="form-step active">
+            <h2>Personal Information</h2>
+            <label>Job Title<input type="text" id="jobTitle" /></label>
+            <label>First Name<input type="text" id="firstName" /></label>
+            <label>Last Name<input type="text" id="lastName" /></label>
+            <label>Email*<input type="email" id="email" /></label>
+            <label>Phone<input type="tel" id="phone" /></label>
+            <label>Address<input type="text" id="address" /></label>
+            <label>City/State<input type="text" id="cityState" /></label>
+            <label>Country<input type="text" id="country" /></label>
+            <button type="button" class="btn next">Next: Experience</button>
+          </section>
+
+          <section class="form-step">
+            <h2>Employment History</h2>
+            <label>Job Title<input type="text" id="expJobTitle" /></label>
+            <label>Company<input type="text" id="company" /></label>
+            <label>Start Date<input type="month" id="startDate" /></label>
+            <label>End Date<input type="month" id="endDate" /></label>
+            <label>Description<textarea id="jobDesc"></textarea></label>
+            <button type="button" class="btn prev">Back</button>
+            <button type="button" class="btn next">Next: Skills</button>
+          </section>
+
+          <section class="form-step">
+            <h2>Skills & Certifications</h2>
+            <label>Skills<input type="text" id="skills" /></label>
+            <label>Certifications<input type="text" id="certifications" /></label>
+            <button type="button" class="btn prev">Back</button>
+            <button type="button" class="btn next">Next: Review</button>
+          </section>
+
+          <section class="form-step">
+            <h2>Review & Submit</h2>
+            <div id="resume-preview" class="preview-pane"></div>
+            <button type="button" class="btn prev">Back</button>
+            <button type="submit" class="btn submit">Generate Resume</button>
+          </section>
+        </form>
+      </main>
+    </div>
+
+  <!-- Include a small script block for navigation & collection -->
+  <script src="resume-builder.js"></script>
+  <!-- Paste this at the end of your HTML before </body> -->
+
+
+</body>
+</html>

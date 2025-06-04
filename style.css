@@ -1,0 +1,427 @@
+/* style.css */
+
+/* ===================== */
+/* 1. Global Reset + Setup */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* ===================== */
+/* 2. HERO CONTAINER (Pure Black) */
+.hero-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-color: #bcbcbc; /* Solid black */
+}
+
+/* Optional: faint geometric lines via pseudo‐element */
+/*
+.hero-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(45deg, rgba(255, 255, 255, 0.01) 1px, transparent 1px),
+    linear-gradient(-45deg, rgba(255, 255, 255, 0.01) 1px, transparent 1px);
+  background-size: 20px 20px;
+  pointer-events: none;
+  z-index: 1;
+}
+*/
+
+/* ===================== */
+/* 3. OVERLAY */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* You can set to 0 (invisible) if you want pure black behind everything */
+  background-color: rgba(0, 0, 0, 0.2); /* 20% black overlay (optional) */
+  z-index: 2;
+}
+
+/* ===================== */
+/* 4. CENTERED HERO CONTENT */
+.hero-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -60%);
+  text-align: center;
+  z-index: 3; /* Above overlay */
+  width: 90%;
+  max-width: 800px;
+  color: #f2f2f2;
+}
+
+/* ===================== */
+/* 5. LOGO (Large + Glow, no fade) */
+.logo {
+  max-width: 600px;
+  width: 80%;
+  height: auto;
+  margin-bottom: 1.5rem;
+
+  /* Keep the soft glow so it stands out on black */
+  filter: drop-shadow(0 0 16px #fff);
+}
+
+/* ===================== */
+/* 6. SITE TITLE (Basic font + Text‐Shadow, no fade) */
+.site-title {
+  font-family: 'Basic', sans-serif;
+  font-size: 3.2rem;
+  letter-spacing: 2px;
+  color: #f2f2f2;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+/* ===================== */
+/* 7. TAGLINE (Basic font, no fade) */
+.tagline {
+  font-family: 'Basic', sans-serif;
+  font-size: 1.2rem;
+  color: #eaeaea;
+  margin-bottom: 1rem;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* ===================== */
+/* 8. INTRO PARAGRAPH (Kaushan Script, no fade) */
+.intro {
+  font-family: 'Kaushan Script', cursive;
+  font-size: 1.35rem;
+  color: #fdfdfd;
+  margin: 1rem auto;
+  max-width: 600px;
+  line-height: 1.5;
+}
+
+/* ===================== */
+/* 9. BUTTONS (Basic font + Hover Effects, no fade) */
+.hero-nav {
+  position: absolute;
+  bottom: 6%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 1rem;
+  z-index: 3;
+}
+
+.btn {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background-color: rgba(255, 255, 255, 0.95);
+  color: #1f2a44;
+  font-family: 'Basic', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.btn:hover,
+.btn:focus {
+  background-color: #1f2a44;
+  color: #f2f2f2;
+  transform: translateY(-3px);
+}
+
+.preview-container {
+  background: white;
+  color: #333;
+  border-radius: 8px;
+  padding: 20px;
+  margin-top: 20px;
+  height: 400px;
+  overflow-y: auto;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.form-container, .preview-pane {
+  overflow-y: auto;
+  height: 400px;
+  scrollbar-width: thin;
+  scrollbar-color: #888 #f1f1f1;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* CSS Enhancements */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #f5f6fa;
+  margin: 0;
+  padding: 0;
+}
+
+.resume-builder-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  overflow-y: auto;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.logo {
+  width: 120px;
+  margin-bottom: 1rem;
+}
+
+.subheading {
+  color: #666;
+}
+
+.form-stepper {
+  display: flex;
+  justify-content: space-between;
+  background: #eee;
+  padding: 0.5rem;
+  margin-bottom: 2rem;
+  border-radius: 6px;
+}
+
+.step {
+  flex: 1;
+  text-align: center;
+  padding: 0.5rem;
+  color: #777;
+}
+
+.step.active {
+  background: #007bff;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+.form-container {
+  max-height: 600px;
+  overflow-y: auto;
+  padding: 1rem;
+}
+
+.form-step {
+  display: none;
+}
+
+.form-step.active {
+  display: block;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.95rem;
+}
+
+input, textarea {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.btn {
+  background: #007bff;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  margin-top: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn.prev {
+  background: #6c757d;
+}
+
+.preview-pane {
+  background: #f1f1f1;
+  padding: 1rem;
+  border-radius: 8px;
+  height: 300px;
+  overflow-y: auto;
+}
+.form-step {
+  display: none;
+}
+
+.form-step.active {
+  display: block;
+}
+
+.step.active {
+  background: #007bff;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+/* ===================== */
+/* 10. RESPONSIVE ADJUSTMENTS */
+@media (max-width: 800px) {
+  .logo {
+    width: 90%;
+  }
+  .site-title {
+    font-size: 2.6rem;
+  }
+  .tagline {
+    font-size: 1.1rem;
+  }
+  .intro {
+    font-size: 1.15rem;
+    max-width: 85%;
+  }
+  .btn {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.9rem;
+  }
+  .hero-nav {
+    gap: 0.75rem;
+    bottom: 4%;
+  }
+}
+
+@media (max-width: 500px) {
+  .site-title {
+    font-size: 2rem;
+  }
+  .tagline {
+    font-size: 0.95rem;
+  }
+  .intro {
+    font-size: 1rem;
+    max-width: 90%;
+  }
+  .btn {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.85rem;
+  }/* Multi‐step form: hide steps by default */
+.form-step {
+  display: none;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  color: #fdfdfd;
+  font-family: 'Basic', sans-serif;
+}
+
+/* Show the active step */
+.form-step[data-step].active {
+  display: block;
+}
+
+/* “Hidden” helper class */
+.hidden {
+  display: none !important;
+}
+
+/* Step indicator (the circles at top) */
+.step-indicator {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.step-indicator .step {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #f2f2f2;
+  margin: 0 4px;
+  font-weight: bold;
+  font-family: 'Basic', sans-serif;
+}
+
+.step-indicator .step.active {
+  background-color: #f2f2f2;
+  color: #1f2a44;
+}
+
+/* Smaller “secondary” button style for “Add Another” */
+.btn.secondary {
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #1f2a44;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+.btn.secondary:hover {
+  background-color: #1f2a44;
+  color: #f2f2f2;
+}
+
+/* Simple form styling */
+label {
+  display: block;
+  margin-bottom: 12px;
+  font-size: 1rem;
+}
+
+label input,
+label select,
+label textarea {
+  display: block;
+  width: 100%;
+  padding: 8px;
+  margin-top: 4px;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+label textarea {
+  resize: vertical;
+}
+
+}
